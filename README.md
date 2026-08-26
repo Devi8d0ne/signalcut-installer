@@ -7,7 +7,14 @@
 
 > Turn a YouTube brief into researched, written, designed, approval-ready faceless videos from one local Codex-powered studio.
 
+![SignalCut — From brief to broadcast](docs/images/signalcut-social-preview-1280x640.jpg)
+
+<details>
+<summary>See the SignalCut Studio workspace</summary>
+
 ![SignalCut Studio project workspace](docs/images/signalcut-studio.png)
+
+</details>
 
 This is the public installation and update-verification repository for SignalCut. It intentionally contains **no SignalCut application source code, credentials, signing secrets, or private-repository access**.
 
@@ -63,6 +70,8 @@ SignalCut's working database, channel authorization, source ledger, scripts, nar
 
 This repository is MIT-licensed installer infrastructure. SignalCut itself is proprietary and licensed separately under the EULA delivered with each release. Viewing or modifying this installer does not grant rights to SignalCut application source or binaries.
 
+- [SignalCut EULA](SIGNALCUT-EULA.md)
+- [Privacy disclosure](PRIVACY.md)
 - [Setup and credential guidance](docs/setup.md)
 - [Release hosting contract](docs/hosting.md)
 - [Update behavior](docs/updates.md)

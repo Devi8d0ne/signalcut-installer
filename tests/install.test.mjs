@@ -1,4 +1,5 @@
-import { createHash, generateKeyPairSync, sign } from "node:crypto";
+import { createHash, createPublicKey, generateKeyPairSync, sign } from "node:crypto";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 import assert from "node:assert/strict";
 
@@ -88,4 +89,14 @@ test("compares installer minimum versions", () => {
   assert.ok(compareVersions("0.2.0", "0.1.9") > 0);
   assert.ok(compareVersions("1.0.0-beta.1", "1.0.0") < 0);
   assert.equal(compareVersions("1.2.3", "1.2.3"), 0);
+});
+
+test("pins the production Ed25519 release identity", () => {
+  const pem = readFileSync(new URL("../keys/signalcut-release-public.pem", import.meta.url), "utf8");
+  const key = createPublicKey(pem);
+  assert.equal(key.asymmetricKeyType, "ed25519");
+  assert.equal(
+    createHash("sha256").update(key.export({ type: "spki", format: "der" })).digest("hex"),
+    "9c15b2991e01adb232e46249c27b0f6112a7dcbf38b0e2d4f6762b8991c37972",
+  );
 });
