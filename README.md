@@ -4,35 +4,36 @@ This is the public installation and update-verification repository for SignalCut
 
 > **Release status:** the installer shell is ready, but public installation remains disabled until the first proprietary SignalCut binary is packaged, signed, and published with the production release public key. The installer fails closed while that key or release is absent.
 
-## Install with Codex
+## Install SignalCut
 
-1. Clone this public repository.
-2. Open the cloned folder in Codex.
-3. Give Codex the instructions in [CODEX_INSTALL_PROMPT.md](CODEX_INSTALL_PROMPT.md).
+When the first signed application release is available:
 
-Codex checks the operating system and dependencies, downloads only the official platform package, verifies the signed manifest and SHA-256 digest, and starts the platform installer. It must never request a private-repository token or ask you to paste application credentials into chat.
+1. Open the repository's [Releases](https://github.com/Devi8d0ne/signalcut-installer/releases) page.
+2. Download the installer for your operating system and CPU architecture.
+3. Confirm the operating-system signature, then run the installer.
+4. Open SignalCut and connect your existing Codex installation and authenticated account.
 
-## Direct commands
+The SignalCut package bundles its application runtime, FFmpeg/FFprobe, browser automation, local database runtime and migrations, base narration model, and updater. End users do not install Node.js, npm, Git, Wrangler, Python, or media tooling.
 
-Requires Node.js 20 or later:
+Codex Desktop itself is not bundled. A supported Codex installation and authenticated Codex account are required to use SignalCut. User-owned Google, YouTube, and other service credentials are connected locally after first launch.
 
-```powershell
-npm run check
-npm run install
-```
+## Optional Codex guidance
 
-On macOS or Linux:
+Codex can guide a user through choosing and validating an official release using [CODEX_INSTALL_PROMPT.md](CODEX_INSTALL_PROMPT.md). It must never clone SignalCut's private source, install development dependencies, replace the pinned release key, or collect application credentials.
 
-```bash
-./install.sh --check
-./install.sh
-```
+## Updates
 
-Use `npm run download` to verify and download a release without launching its platform installer.
+Every approved private R&D version produces a new immutable, signed GitHub Release here. SignalCut checks the signed release manifest and offers the compatible update. Application source never enters this repository.
+
+See [updates and release channels](docs/updates.md) for the exact behavior.
+
+## Maintainer verification code
+
+The Node.js code in `src/` is a public reference implementation and security test for signed manifest selection. It is not the normal end-user installer and is not a SignalCut runtime dependency.
 
 ## What remains local
 
-After SignalCut starts, configure your own Codex login, Google OAuth client, YouTube authorization, Pexels key, and ElevenLabs key inside SignalCut's local interface. Do not put those credentials in this repository or a Codex conversation.
+After SignalCut starts, connect your Codex session, Google OAuth client, YouTube authorization, and any other supported user-owned services inside SignalCut's local interface. Do not put those credentials in this repository or a Codex conversation.
 
 ## Repository boundary
 
@@ -40,5 +41,6 @@ This repository is MIT-licensed installer infrastructure. SignalCut itself is pr
 
 - [Setup and credential guidance](docs/setup.md)
 - [Release hosting contract](docs/hosting.md)
+- [Update behavior](docs/updates.md)
 - [Troubleshooting](docs/troubleshooting.md)
 - [Security policy](SECURITY.md)

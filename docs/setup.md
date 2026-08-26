@@ -2,12 +2,12 @@
 
 ## Prerequisites
 
-- Node.js 20 or later to run this public installer.
-- The Codex desktop app or another supported local Codex authentication environment.
-- FFmpeg and FFprobe on `PATH` until they are bundled with the SignalCut platform package.
 - A supported 64-bit Windows, macOS, or Linux machine.
+- The Codex desktop app or another supported local Codex authentication environment.
+- An authenticated Codex account.
+- Internet access for Codex and user-connected services.
 
-Run `npm run check` to inspect prerequisites without downloading or changing anything.
+SignalCut bundles its runtime, FFmpeg/FFprobe, browser automation, local database, migrations, base narration model, and updater. Node.js, npm, Git, Wrangler, Python, and system media tools are not end-user prerequisites.
 
 ## Credentials
 
@@ -16,7 +16,7 @@ The installer does not collect application credentials. After verified installat
 1. Their own local Codex login.
 2. Their own Google Cloud project and YouTube Data API v3 OAuth Desktop client.
 3. Their own YouTube channel authorization.
-4. Optional Pexels and ElevenLabs credentials.
+4. Any optional user-owned services supported by that SignalCut version.
 
 Enter credentials only into SignalCut's local interface. Do not paste them into Codex, commit them to this repository, place them in an issue, or send them to a SignalCut download host.
 
