@@ -34,4 +34,4 @@ No local application can guarantee absolute security. Keep the operating system 
 
 ## Changes and contact
 
-Material changes to these practices will be disclosed with the applicable release before they take effect. Questions may be sent to `fholder.us@gmail.com` or by tracked mail to Deviated Holdings, Inc., 4755 Chicago St, Cocoa, Florida 32927, USA.
+Material changes to these practices will be disclosed with the applicable release before they take effect. Questions may be sent to `support@deviatedsystems.com` or by tracked mail to Deviated Holdings, Inc., 4755 Chicago St, Cocoa, Florida 32927, USA.

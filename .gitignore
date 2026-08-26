@@ -1,4 +1,8 @@
 node_modules/
+site/node_modules/
+.astro/
+site/.astro/
+dist/
 .DS_Store
 *.log
 downloads/

@@ -1,0 +1,177 @@
+---
+import "@fontsource/barlow-condensed/500.css";
+import "@fontsource/barlow-condensed/600.css";
+import "@fontsource/barlow-condensed/700.css";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "../styles/global.css";
+
+const base = import.meta.env.BASE_URL;
+const assetBase = base.endsWith("/") ? base : `${base}/`;
+const repo = "https://github.com/Devi8d0ne/signalcut-installer";
+const release = `${repo}/releases/latest`;
+
+const workflow = [
+  { number: "01", name: "Research", copy: "Find defensible angles, current sources, and rights-cleared assets that fit the brief.", icon: "search" },
+  { number: "02", name: "Write", copy: "Draft the hook, structure, chapters, captions, metadata, and voiceover in one thread.", icon: "write" },
+  { number: "03", name: "Design", copy: "Build on-subject scenes, generated frames, narration, music, and the thumbnail.", icon: "design" },
+  { number: "04", name: "Review", copy: "Keep the parts that work. Reproduce only the voice, cover, script, audio, or frames you reject.", icon: "review" },
+  { number: "05", name: "Publish", copy: "Approve and publish to the right YouTube playlist, category, format, and schedule.", icon: "publish" },
+];
+
+const checks = [
+  "You provide and own your Codex, Google, and YouTube credentials.",
+  "Releases are verified against a pinned Deviated Holdings signing key.",
+  "Projects, source ledgers, media, renders, and usage records stay local.",
+  "The public installer contains no SignalCut application source.",
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="SignalCut turns a YouTube brief into researched, written, designed, approval-ready faceless videos from one local Codex-powered studio." />
+    <meta name="theme-color" content="#08090a" />
+    <meta property="og:title" content="SignalCut — From brief to broadcast" />
+    <meta property="og:description" content="A local-first Codex-powered YouTube research, production, and publishing studio." />
+    <meta property="og:image" content={`${assetBase}images/signalcut-social-preview-1280x640.jpg`} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://devi8d0ne.github.io/signalcut-installer/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href={`${assetBase}favicon.svg`} type="image/svg+xml" />
+    <title>SignalCut — From brief to broadcast</title>
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="SignalCut home">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true"><rect x="4" y="8" width="40" height="32" rx="4"></rect><path d="M10 14v5m0 5v5m0 5v1M38 14v5m0 5v5m0 5v1M18 15l14 9-14 9z"></path><path class="signal" d="M1 24h10l3-7 5 15 5-22 5 28 4-14h14"></path></svg>
+        <span>SIGNALCUT</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#product">Product</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#security">Security</a>
+        <a href="#setup">Setup</a>
+      </nav>
+      <a class="header-star" href={`${repo}/stargazers`} target="_blank" rel="noreferrer" aria-label="Star SignalCut on GitHub">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.86c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.58 9.58 0 0 1 12 6.83a9.6 9.6 0 0 1 2.5.34c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.85v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2z"></path></svg>
+        <span>Star on GitHub</span>
+        <strong data-stars aria-label="GitHub stars">—</strong>
+      </a>
+      <button class="menu" type="button" aria-label="Open navigation" aria-expanded="false" data-menu><span></span><span></span></button>
+    </header>
+
+    <main id="top">
+      <section class="hero" id="product">
+        <div class="hero-copy">
+          <h1>From brief to<br /><em>broadcast.</em></h1>
+          <p>Research, write, design, review, and publish faceless YouTube videos from one local Codex-powered studio.</p>
+          <div class="actions">
+            <a class="button primary" href={release} data-download>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 20h14"></path></svg>
+              <span data-download-label>Download SignalCut</span>
+            </a>
+            <a class="button secondary" href={`${repo}/blob/main/docs/setup.md`} target="_blank" rel="noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v16H6.5A2.5 2.5 0 0 0 4 21.5zM20 5.5A2.5 2.5 0 0 0 17.5 3H13v16h4.5a2.5 2.5 0 0 1 2.5 2.5z"></path></svg>
+              Read setup guide
+            </a>
+          </div>
+          <p class="release-note" data-release-note>Windows x64 · signed manifest · free local voice runtime</p>
+        </div>
+        <div class="studio-frame">
+          <div class="window-bar"><span></span><span></span><span></span><small>SignalCut Studio</small></div>
+          <img src={`${assetBase}images/signalcut-studio.png`} alt="SignalCut Studio showing the research stage and persistent Codex workspace" width="1440" height="1000" />
+        </div>
+      </section>
+
+      <section class="workflow section-rule" id="workflow">
+        <div class="section-heading">
+          <h2>The SignalCut workflow</h2>
+          <p>One durable creative thread. Five production stages. Your approval policy.</p>
+        </div>
+        <ol class="workflow-list">
+          {workflow.map((step) => (
+            <li>
+              <div class="step-top"><span>{step.number}</span><i aria-hidden="true"></i></div>
+              <h3>{step.name}</h3>
+              <p>{step.copy}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section class="security section-rule" id="security">
+        <div class="security-copy">
+          <h2>Your channel<br />stays <em>yours.</em></h2>
+          <p>SignalCut is local-first by design. Your content, credentials, and working data stay on your machine unless you decide to publish.</p>
+          <ul>
+            {checks.map((check) => <li><span aria-hidden="true">✓</span>{check}</li>)}
+          </ul>
+        </div>
+        <div class="security-diagram" aria-label="Local SignalCut studio connects securely to user-owned services">
+          <div class="local-machine">
+            <svg class="brand-mark large" viewBox="0 0 48 48" aria-hidden="true"><rect x="4" y="8" width="40" height="32" rx="4"></rect><path d="M10 14v5m0 5v5m0 5v1M38 14v5m0 5v5m0 5v1M18 15l14 9-14 9z"></path><path class="signal" d="M1 24h10l3-7 5 15 5-22 5 28 4-14h14"></path></svg>
+            <strong>Local studio</strong><small>127.0.0.1</small>
+          </div>
+          <div class="secure-rail"><span>Signed releases</span><span>Local database</span><span>Owner approval</span></div>
+          <div class="services"><span>Codex</span><span>Google</span><span>YouTube</span></div>
+        </div>
+      </section>
+
+      <section class="closing section-rule" id="setup">
+        <div class="closing-copy">
+          <h2>Built for operators,<br />not spectators.</h2>
+          <p>SignalCut gives you the full production loop—from research to publish—inside a local studio you control.</p>
+          <div class="actions">
+            <a class="button primary" href={release} data-download><span>Download SignalCut</span></a>
+            <a class="button secondary" href={`${repo}/stargazers`} target="_blank" rel="noreferrer">Star the repo</a>
+          </div>
+        </div>
+        <img class="closing-art" src={`${assetBase}images/signalcut-social-preview-1280x640.jpg`} alt="SignalCut timeline and generated frame production artwork" width="1280" height="640" />
+      </section>
+    </main>
+
+    <footer>
+      <span>© {new Date().getFullYear()} Deviated Holdings, Inc.</span>
+      <div><a href={`${repo}/blob/main/SIGNALCUT-EULA.md`}>EULA</a><a href={`${repo}/blob/main/PRIVACY.md`}>Privacy</a><a href={`${repo}/security/policy`}>Security</a><a href="mailto:support@deviatedsystems.com">Support</a></div>
+    </footer>
+
+    <script>
+      const repoApi = "https://api.github.com/repos/Devi8d0ne/signalcut-installer";
+      const releaseUrl = "https://github.com/Devi8d0ne/signalcut-installer/releases/latest";
+      const star = document.querySelector("[data-stars]");
+      const menu = document.querySelector("[data-menu]");
+      const header = document.querySelector("[data-header]");
+
+      fetch(repoApi, { headers: { Accept: "application/vnd.github+json" } })
+        .then((response) => response.ok ? response.json() : Promise.reject())
+        .then((data) => { if (star) star.textContent = new Intl.NumberFormat().format(data.stargazers_count); })
+        .catch(() => { if (star) star.textContent = "★"; });
+
+      fetch(`${repoApi}/releases/latest`, { headers: { Accept: "application/vnd.github+json" } })
+        .then((response) => response.ok ? response.json() : Promise.reject())
+        .then((data) => {
+          const preferred = data.assets.find((asset) => /signalcut-.*-windows-x64\.(exe|msi|zip)$/i.test(asset.name));
+          const target = preferred?.browser_download_url || data.html_url || releaseUrl;
+          document.querySelectorAll("[data-download]").forEach((link) => link.href = target);
+          const note = document.querySelector("[data-release-note]");
+          if (note) note.textContent = `${data.name || data.tag_name} · signed manifest · Windows x64`;
+        })
+        .catch(() => {
+          document.querySelectorAll("[data-download]").forEach((link) => link.href = releaseUrl);
+        });
+
+      menu?.addEventListener("click", () => {
+        const open = header?.classList.toggle("nav-open") || false;
+        menu.setAttribute("aria-expanded", String(open));
+      });
+      document.querySelectorAll("nav a").forEach((link) => link.addEventListener("click", () => {
+        header?.classList.remove("nav-open");
+        menu?.setAttribute("aria-expanded", "false");
+      }));
+    </script>
+  </body>
+</html>

@@ -1,6 +1,6 @@
 import { createHash, createPublicKey, verify } from "node:crypto";
 import { createWriteStream } from "node:fs";
-import { chmod, copyFile, mkdir, mkdtemp, readFile } from "node:fs/promises";
+import { chmod, copyFile, mkdir, mkdtemp, readFile, readdir } from "node:fs/promises";
 import { homedir, tmpdir } from "node:os";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
@@ -176,8 +176,30 @@ function run(command, args) {
   if (result.status !== 0) fail(`${command} exited with status ${result.status}`);
 }
 
-async function launchInstaller(artifactPath, environment) {
+async function findFile(directory, filename) {
+  for (const entry of await readdir(directory, { withFileTypes: true })) {
+    const candidate = path.join(directory, entry.name);
+    if (entry.isDirectory()) {
+      const nested = await findFile(candidate, filename);
+      if (nested) return nested;
+    } else if (entry.name.toLowerCase() === filename.toLowerCase()) {
+      return candidate;
+    }
+  }
+  return null;
+}
+
+async function launchInstaller(artifactPath, environment, version) {
   const lower = artifactPath.toLowerCase();
+  if (environment.platform === "windows" && lower.endsWith(".zip")) {
+    const installRoot = path.join(process.env.LOCALAPPDATA || homedir(), "SignalCut", "Application", version);
+    await mkdir(installRoot, { recursive: true });
+    run("tar.exe", ["-x", "-f", artifactPath, "-C", installRoot]);
+    const launcher = await findFile(installRoot, "Start SignalCut.cmd");
+    if (!launcher) fail("The verified SignalCut archive does not contain Start SignalCut.cmd");
+    run("cmd.exe", ["/d", "/c", "start", "", launcher]);
+    return;
+  }
   if (environment.platform === "windows" && lower.endsWith(".msi")) {
     run("msiexec.exe", ["/i", artifactPath]);
     return;
@@ -253,7 +275,7 @@ async function main() {
   await downloadAndVerify(artifact, artifactPath);
   process.stdout.write(`Verified SignalCut ${manifest.version}: ${artifactPath}\n`);
 
-  if (!args.downloadOnly) await launchInstaller(artifactPath, environment);
+  if (!args.downloadOnly) await launchInstaller(artifactPath, environment, manifest.version);
 }
 
 const invokedPath = process.argv[1] ? pathToFileURL(path.resolve(process.argv[1])).href : "";

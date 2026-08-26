@@ -7,9 +7,16 @@
   "scripts": {
     "check:reference": "node src/install.mjs --check",
     "verify:reference": "node src/install.mjs --download-only",
+    "site:dev": "astro dev --config astro.config.mjs",
+    "site:build": "astro build --config astro.config.mjs",
     "test": "node --test"
   },
   "engines": {
     "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "@fontsource/barlow-condensed": "^5.2.6",
+    "@fontsource/inter": "^5.2.6",
+    "astro": "^5.13.5"
   }
 }

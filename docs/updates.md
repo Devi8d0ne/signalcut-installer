@@ -8,7 +8,7 @@ For each approved version, the private release workflow:
 2. runs tests, type checks, and the production build;
 3. packages the application and all required runtime components;
 4. verifies the runtime inventory, final EULA, and third-party notices;
-5. verifies the operating-system signature or notarization;
+5. verifies a platform signature when the package format supports one;
 6. signs `release.json` with the offline SignalCut release key; and
 7. publishes immutable installers and metadata as a new GitHub Release here.
 
@@ -22,4 +22,4 @@ SignalCut trusts the manifest only when its detached Ed25519 signature verifies 
 
 An update failure leaves the installed version untouched. A release may not silently downgrade the application or replace user projects and credentials. Database migrations must be versioned and backed up before application of a non-reversible change.
 
-Large optional components, such as a GPU narration model pack, may be separate signed artifacts. The base installer must retain a bundled working fallback and must clearly request approval before downloading an optional pack.
+SignalCut 0.1.0 bundles the production Qwen3-TTS runtime and automatically provisions its pinned open-source model weights on first launch. Future optional GPU acceleration packs may be separate signed artifacts; the base release must retain a working CPU path.

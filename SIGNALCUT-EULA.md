@@ -25,7 +25,7 @@ Except where applicable law expressly prohibits a restriction, You may not:
 - remove, obscure, or alter copyright, trademark, branding, attribution, license, or ownership notices; or
 - use the Software in violation of law, platform rules, sanctions, or third-party rights.
 
-If applicable law gives You a non-waivable right to reverse engineer for interoperability, first request the necessary interoperability information at `fholder.us@gmail.com`. You may exercise that right only after a reasonable response period and only to the minimum extent the law permits.
+If applicable law gives You a non-waivable right to reverse engineer for interoperability, first request the necessary interoperability information at `support@deviatedsystems.com`. You may exercise that right only after a reasonable response period and only to the minimum extent the law permits.
 
 ## 3. Your accounts, credentials, and content
 
@@ -111,7 +111,7 @@ If a provision is unenforceable, it will be enforced to the maximum lawful exten
 Cocoa, Florida 32927  
 United States  
 
-Support and interoperability requests: `fholder.us@gmail.com`  
+Support and interoperability requests: `support@deviatedsystems.com`
 Security reports: use the private vulnerability-reporting form in the official SignalCut installer repository.  
 
-Formal legal notices must be sent by tracked mail to the address above, with a copy by email to `fholder.us@gmail.com`.
+Formal legal notices must be sent by tracked mail to the address above, with a copy by email to `support@deviatedsystems.com`.

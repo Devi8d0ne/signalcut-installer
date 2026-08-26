@@ -7,7 +7,9 @@
 - An authenticated Codex account.
 - Internet access for Codex and user-connected services.
 
-SignalCut bundles its runtime, FFmpeg/FFprobe, browser automation, local database, migrations, base narration model, and updater. Node.js, npm, Git, Wrangler, Python, and system media tools are not end-user prerequisites.
+SignalCut bundles its runtime, FFmpeg/FFprobe, browser automation, local database, migrations, Python/Qwen3-TTS production voice runtime, Kokoro preview model, and updater. Node.js, npm, Git, Wrangler, Python, and system media tools are not end-user prerequisites.
+
+The Windows x64 portable release is a ZIP. Extract the complete directory and run `Start SignalCut.cmd`. First launch automatically downloads the pinned open-source Qwen3-TTS model weights (about 4 GB) into the local SignalCut data directory. This requires internet access but no provider account, credits, subscription, or API key.
 
 ## Credentials
 
