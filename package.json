@@ -1,0 +1,16 @@
+{
+  "name": "signalcut-installer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Public, fail-closed installer and release verifier for SignalCut.",
+  "scripts": {
+    "check": "node src/install.mjs --check",
+    "install": "node src/install.mjs",
+    "download": "node src/install.mjs --download-only",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
