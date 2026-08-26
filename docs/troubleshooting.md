@@ -20,9 +20,13 @@ The signed release does not support the detected operating system and architectu
 
 Delete the downloaded package and stop. Re-running is reasonable once in case of a network interruption; repeated mismatch should be reported as a release-integrity problem.
 
-## FFmpeg or FFprobe is missing
+## Codex is missing or disconnected
 
-Install the missing prerequisite from its official source and rerun `npm run check`. Do not download executables from links supplied by untrusted issues or comments.
+Install or open Codex Desktop from the official OpenAI source, sign in, and rerun SignalCut's first-launch connection check. Do not enter Codex credentials into an issue, repository file, or installer terminal.
+
+## SignalCut asks for Node.js, FFmpeg, Python, or developer tools
+
+Stop and report the packaging problem. Production SignalCut releases must bundle those runtime components and may not turn them into end-user prerequisites.
 
 ## SignalCut credentials are requested in chat
 
