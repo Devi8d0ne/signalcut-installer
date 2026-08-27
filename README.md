@@ -26,17 +26,17 @@ This is the public installation and update-verification repository for SignalCut
 2. Download `signalcut-0.1.1-windows-x64.zip`.
 3. Verify it with the signed `release.json` and `release.json.sig`, or use the reviewed [Codex installation prompt](CODEX_INSTALL_PROMPT.md).
 4. Extract the complete folder and double-click `Start SignalCut.vbs` for a hidden, on-demand launch.
-5. Connect your own Codex, Google, YouTube, and ElevenLabs credentials in SignalCut. Use `Stop SignalCut.vbs` to stop every SignalCut service.
+5. Connect your own Codex, Google, YouTube, and optional free Pexels credentials in SignalCut. Use `Stop SignalCut.vbs` to stop every SignalCut service.
 
 Or clone this installer repository, open it in Codex Desktop, and use the reviewed [Codex installation prompt](CODEX_INSTALL_PROMPT.md). Codex follows the same signed-manifest and checksum verification path; it never receives SignalCut's private source or your service credentials.
 
-The SignalCut package bundles its application runtime, restricted FFmpeg/FFprobe final-assembly tools, browser runtime, local database runtime and migrations, and updater. It does not bundle or download local AI models or a Python AI environment. End users do not install Node.js, npm, Git, Wrangler, Python, or media tooling; narration uses the owner's connected ElevenLabs account.
+The SignalCut package bundles its application runtime, restricted FFmpeg/FFprobe final-assembly tools, browser runtime, local database runtime and migrations, and updater. It does not bundle or download local AI models or a Python AI environment. End users do not install Node.js, npm, Git, Wrangler, Python, or media tooling. Original images use Codex-connected tools, source images use free cloud APIs, and narration uses Microsoft Edge's online neural voices without an account or key.
 
 SignalCut never registers itself to start with Windows. It launches only when the operator starts it, uses the Eco resource profile, and keeps the production engine paused until the operator explicitly starts production.
 
 The portable ZIP is protected by the signed SignalCut release manifest and checksum. It is not yet an Authenticode-signed `.exe`; Windows may show the normal warning for a downloaded command file.
 
-Codex Desktop itself is not bundled. A supported Codex installation and authenticated Codex account are required to use SignalCut. User-owned Google, YouTube, ElevenLabs, and other service credentials are connected locally after first launch.
+Codex Desktop itself is not bundled. A supported Codex installation and authenticated Codex account are required to use SignalCut. User-owned Google, YouTube, optional Pexels, and other service credentials are connected locally after first launch.
 
 ## Optional Codex guidance
 
@@ -54,7 +54,7 @@ The Node.js code in `src/` is a public reference implementation and security tes
 
 ## What remains local
 
-After SignalCut starts, connect your Codex session, Google OAuth client, YouTube authorization, ElevenLabs account, and any other supported user-owned services inside SignalCut's local interface. Do not put those credentials in this repository or a Codex conversation.
+After SignalCut starts, connect your Codex session, Google OAuth client, YouTube authorization, optional free Pexels API key, and any other supported user-owned services inside SignalCut's local interface. Do not put those credentials in this repository or a Codex conversation.
 
 SignalCut's working database, channel authorization, source ledger, scripts, narration, frames, thumbnails, renders, and usage ledger remain on the operator's machine. Local services bind to loopback addresses rather than becoming a hosted multi-user service.
 
@@ -64,7 +64,7 @@ SignalCut's working database, channel authorization, source ledger, scripts, nar
 - Run owner-defined content lanes mapped to real YouTube playlists, categories, formats, and schedules.
 - Research current sources, record citations and rights, and avoid generic filler footage.
 - Produce scripts, chapters, captions, metadata, focused hashtags, thumbnails, narration, and production manifests.
-- Use rights-cleared free media plus original locally rendered visual treatments and generated frames.
+- Build image-driven motion videos from Codex-generated frames and rights-cleared free image references, with Microsoft online neural voiceover and optional rights-cleared ambience.
 - Support selective reproduction of only the rejected voiceover, music, frames, cover, script, or metadata.
 - Keep autonomous safe stages behind the selected approval policy and final YouTube publishing under owner control.
 - Track exact Codex usage, model, reasoning effort, duration, and pipeline outcomes.

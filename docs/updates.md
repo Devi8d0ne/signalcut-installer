@@ -22,4 +22,4 @@ SignalCut trusts the manifest only when its detached Ed25519 signature verifies 
 
 An update failure leaves the installed version untouched. A release may not silently downgrade the application or replace user projects and credentials. Database migrations must be versioned and backed up before application of a non-reversible change.
 
-SignalCut 0.1.1 removes local AI runtimes and automatic model downloads. Narration and generation use owner-connected cloud providers; the local package retains only bounded final-assembly and application infrastructure.
+SignalCut 0.1.1 removes local AI runtimes and automatic model downloads. Original images use Codex-connected tools, source images use free cloud APIs, narration uses Microsoft Edge online neural voices, and the local package retains only bounded final assembly and application infrastructure.

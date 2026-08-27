@@ -18,8 +18,10 @@ The installer does not collect application credentials. After verified installat
 1. Their own local Codex login.
 2. Their own Google Cloud project and YouTube Data API v3 OAuth Desktop client.
 3. Their own YouTube channel authorization.
-4. Their own ElevenLabs account for cloud narration.
+4. Their optional free Pexels API key for additional image references.
 5. Any optional user-owned services supported by that SignalCut version.
+
+Microsoft online neural narration requires no account or API key. SignalCut's default production style is a motion video assembled from original and sourced images, not live-action footage.
 
 Enter credentials only into SignalCut's local interface. Do not paste them into Codex, commit them to this repository, place them in an issue, or send them to a SignalCut download host.
 

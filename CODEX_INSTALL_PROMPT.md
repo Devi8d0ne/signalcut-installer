@@ -15,7 +15,7 @@ Install SignalCut using only the files and documented verification flow in this 
 8. Select only the artifact matching this operating system and CPU architecture.
 9. Verify the platform signature plus the complete artifact's byte length and SHA-256 digest before opening it.
 10. Stop and explain the exact problem if any dependency, key, signature, checksum, platform match, or HTTPS requirement fails. Do not bypass or weaken a failed check.
-11. Launch the verified platform installer with its hidden on-demand launcher. Do not add a Windows startup entry and do not install Node.js, npm, Git, Wrangler, Python, local AI models, FFmpeg, FFprobe, or browser automation; required non-AI runtime components belong in the signed SignalCut package. After SignalCut starts paused in Eco mode, direct me to its local setup screen for Codex and my own Google OAuth, YouTube, and ElevenLabs configuration.
+11. Launch the verified platform installer with its hidden on-demand launcher. Do not add a Windows startup entry and do not install Node.js, npm, Git, Wrangler, Python, local AI models, FFmpeg, FFprobe, or browser automation; required non-AI runtime components belong in the signed SignalCut package. After SignalCut starts paused in Eco mode, direct me to its local setup screen for Codex, my own Google OAuth and YouTube configuration, and an optional free Pexels API key. Microsoft online neural narration requires no account or key.
 12. Confirm what was installed, its version, and where the verified package was downloaded. Never claim installation succeeded unless the installer completed successfully.
 ```
 
