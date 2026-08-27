@@ -1,6 +1,6 @@
 {
   "name": "signalcut-installer",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": true,
   "type": "module",
   "description": "Public, fail-closed installer and release verifier for SignalCut.",
