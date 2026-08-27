@@ -21,7 +21,7 @@ const workflow = [
 ];
 
 const production = [
-  { label: "Frames", title: "Original image-first scenes", copy: "Codex image tools create on-subject frames. Rights-cleared free media can guide the work without turning the result into generic stock footage." },
+  { label: "Frames", title: "Original image-first scenes", copy: "Codex image tools create a focused storyboard of on-subject frames. SignalCut turns them into deliberate push, pull, and pan movement without wasting generation calls on near-duplicates." },
   { label: "Voice", title: "Microsoft neural narration", copy: "Natural online voices are included in the workflow with no ElevenLabs account, no required voice API key, and no local speech model." },
   { label: "Sound", title: "Music only when it helps", copy: "Use optional rights-cleared music or subtle ambience under the narration. Silent space remains a deliberate creative option." },
 ];
@@ -31,6 +31,7 @@ const checks = [
   "Releases are verified against a pinned Deviated Holdings signing key.",
   "No local AI models, Python AI environment, or automatic model downloads.",
   "SignalCut never starts with Windows and opens in Eco mode with production paused.",
+  "Stop engine cancels active production work and the queued heavy-work backlog.",
   "The public installer contains no SignalCut application source.",
 ];
 ---
@@ -87,7 +88,7 @@ const checks = [
               Read setup guide
             </a>
           </div>
-          <p class="release-note" data-release-note>SignalCut 0.1.2 · Windows x64 · signed release · no local AI</p>
+          <p class="release-note" data-release-note>SignalCut 0.1.3 · Windows x64 · signed release · no local AI</p>
         </div>
         <div class="studio-frame">
           <div class="window-bar"><span></span><span></span><span></span><small>SignalCut Studio</small></div>

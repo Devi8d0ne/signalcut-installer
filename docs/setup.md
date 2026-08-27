@@ -9,7 +9,9 @@
 
 SignalCut bundles its runtime, restricted FFmpeg/FFprobe final-assembly tools, browser runtime, local database, migrations, and updater. Node.js, npm, Git, Wrangler, Python, and system media tools are not end-user prerequisites. SignalCut does not bundle or download local AI models or Python AI environments.
 
-The Windows x64 portable release is a ZIP. Extract the complete directory and run `Start SignalCut.vbs`. It starts the bridge, API, and web service hidden, waits for all three health checks, and only then opens Studio in Eco mode with production paused. Run `Stop SignalCut.vbs` to stop every SignalCut service. SignalCut does not register a Windows startup entry.
+The Windows x64 portable release is a ZIP. Extract the complete directory and run `Start SignalCut.vbs`. It starts the bridge, API, and web service hidden, waits for all three health checks, and only then opens Studio in its dedicated app window—not a normal browser tab—with Eco mode enabled and production paused. Run `Stop SignalCut.vbs` to stop every SignalCut service. SignalCut does not register a Windows startup entry.
+
+Inside Studio, **Stop engine** preserves projects and approvals while cancelling active production work and the queued heavy-work backlog. The separate `Stop SignalCut.vbs` shortcut shuts down the complete local application stack.
 
 ## Credentials
 

@@ -25,3 +25,5 @@ An update failure leaves the installed version untouched. A release may not sile
 SignalCut 0.1.1 removes local AI runtimes and automatic model downloads. Original images use Codex-connected tools, source images use free cloud APIs, narration uses Microsoft Edge online neural voices, and the local package retains only bounded final assembly and application infrastructure.
 
 SignalCut 0.1.2 fixes Windows startup so Studio opens only after the bridge, API, and web service pass health checks. It also moves the internal API away from Wrangler's common default port to avoid collisions with other local projects.
+
+SignalCut 0.1.3 makes **Stop engine** a real cancellation boundary for active Codex turns, narration, downloads, browser/frame work, FFmpeg assembly, and queued heavy jobs. It also restores cinematic image motion with deliberate push, pull, and pan directions, uses faster bounded final assembly, preserves completed frames on retries, and makes the engine control available before slower provider checks finish.
