@@ -18,12 +18,12 @@
 
 This is the public installation and update-verification repository for SignalCut. It intentionally contains **no SignalCut application source code, credentials, signing secrets, or private-repository access**.
 
-> **Release status:** SignalCut 0.1.3 for Windows x64 is available as a portable release. Its manifest, byte length, and SHA-256 digest are signed with the production SignalCut Ed25519 release key.
+> **Release status:** SignalCut 0.2.0 introduces Express production, granular editorial revision, evidence-linked recovery artifacts, and visible completion targets. The latest downloadable Windows x64 release remains resolved dynamically from GitHub Releases and is verified by the signed manifest.
 
 ## Install SignalCut
 
 1. Open the repository's [Releases](https://github.com/Devi8d0ne/signalcut-installer/releases) page.
-2. Download `signalcut-0.1.3-windows-x64.zip`.
+2. Download the latest `signalcut-*-windows-x64.zip` asset.
 3. Verify it with the signed `release.json` and `release.json.sig`, or use the reviewed [Codex installation prompt](CODEX_INSTALL_PROMPT.md).
 4. Extract the complete folder and double-click `Start SignalCut.vbs` for a hidden, on-demand launch.
 5. Connect your own Codex, Google, YouTube, and optional free Pexels credentials in SignalCut. Use `Stop SignalCut.vbs` to stop every SignalCut service.
@@ -60,12 +60,15 @@ SignalCut's working database, channel authorization, source ledger, scripts, nar
 
 ## What SignalCut is built to do
 
+- Finish faster with Express mode: one researched editorial package, concurrent cloud production work, bounded local assembly, and final owner approval.
+- Target 8–15 minute Shorts and 25–45 minute long-form production without increasing local CPU or heavy-job concurrency.
 - Maintain one durable Codex thread across research, creative development, writing, design, and release.
 - Run owner-defined content lanes mapped to real YouTube playlists, categories, formats, and schedules.
 - Research current sources, record citations and rights, and avoid generic filler footage.
 - Produce scripts, chapters, captions, metadata, focused hashtags, thumbnails, narration, and production manifests.
 - Build image-driven motion videos from Codex-generated frames and rights-cleared free image references, with Microsoft online neural voiceover and optional rights-cleared ambience.
-- Support selective reproduction of only the rejected voiceover, music, frames, cover, script, or metadata.
+- Support selective reproduction across research, claims, hook, script, metadata, voiceover, music, mix, frames, scenes, cover, captions, and timing.
+- Write change summaries, claim maps, and recovery checkpoints so valid work survives retries and interrupted sessions.
 - Keep autonomous safe stages behind the selected approval policy and final YouTube publishing under owner control.
 - Track exact Codex usage, model, reasoning effort, duration, and pipeline outcomes.
 
