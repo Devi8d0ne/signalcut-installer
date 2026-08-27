@@ -13,17 +13,24 @@ const repo = "https://github.com/Devi8d0ne/signalcut-installer";
 const release = `${repo}/releases/latest`;
 
 const workflow = [
-  { number: "01", name: "Research", copy: "Find defensible angles, current sources, and rights-cleared assets that fit the brief.", icon: "search" },
-  { number: "02", name: "Write", copy: "Draft the hook, structure, chapters, captions, metadata, and voiceover in one thread.", icon: "write" },
-  { number: "03", name: "Design", copy: "Build on-subject scenes, generated frames, narration, music, and the thumbnail.", icon: "design" },
+  { number: "01", name: "Research", copy: "Find defensible angles, current sources, and rights-cleared image references that fit the brief.", icon: "search" },
+  { number: "02", name: "Write", copy: "Draft the hook, structure, chapters, captions, metadata, and natural voiceover in one thread.", icon: "write" },
+  { number: "03", name: "Design", copy: "Turn original frames into motion scenes with narration, optional ambience, and a strong thumbnail.", icon: "design" },
   { number: "04", name: "Review", copy: "Keep the parts that work. Reproduce only the voice, cover, script, audio, or frames you reject.", icon: "review" },
   { number: "05", name: "Publish", copy: "Approve and publish to the right YouTube playlist, category, format, and schedule.", icon: "publish" },
+];
+
+const production = [
+  { label: "Frames", title: "Original image-first scenes", copy: "Codex image tools create on-subject frames. Rights-cleared free media can guide the work without turning the result into generic stock footage." },
+  { label: "Voice", title: "Microsoft neural narration", copy: "Natural online voices are included in the workflow with no ElevenLabs account, no required voice API key, and no local speech model." },
+  { label: "Sound", title: "Music only when it helps", copy: "Use optional rights-cleared music or subtle ambience under the narration. Silent space remains a deliberate creative option." },
 ];
 
 const checks = [
   "You provide and own your Codex, Google, and YouTube credentials.",
   "Releases are verified against a pinned Deviated Holdings signing key.",
-  "Projects, source ledgers, media, renders, and usage records stay local.",
+  "No local AI models, Python AI environment, or automatic model downloads.",
+  "SignalCut never starts with Windows and opens in Eco mode with production paused.",
   "The public installer contains no SignalCut application source.",
 ];
 ---
@@ -33,10 +40,10 @@ const checks = [
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="SignalCut turns a YouTube brief into researched, written, designed, approval-ready faceless videos from one local Codex-powered studio." />
+    <meta name="description" content="SignalCut turns a brief into an original image-driven YouTube video with Codex-generated frames, Microsoft neural narration, optional cleared music, and owner-controlled publishing." />
     <meta name="theme-color" content="#08090a" />
     <meta property="og:title" content="SignalCut — From brief to broadcast" />
-    <meta property="og:description" content="A local-first Codex-powered YouTube research, production, and publishing studio." />
+    <meta property="og:description" content="Original image-driven videos, natural Microsoft narration, optional cleared sound, and owner-controlled YouTube publishing." />
     <meta property="og:image" content={`${assetBase}images/signalcut-social-preview-1280x640.jpg`} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://devi8d0ne.github.io/signalcut-installer/" />
@@ -53,6 +60,7 @@ const checks = [
       <nav aria-label="Primary navigation">
         <a href="#product">Product</a>
         <a href="#workflow">Workflow</a>
+        <a href="#media">Media</a>
         <a href="#security">Security</a>
         <a href="#setup">Setup</a>
       </nav>
@@ -68,7 +76,7 @@ const checks = [
       <section class="hero" id="product">
         <div class="hero-copy">
           <h1>From brief to<br /><em>broadcast.</em></h1>
-          <p>Research, write, design, review, and publish faceless YouTube videos from one local Codex-powered studio.</p>
+          <p>Create original image-driven YouTube videos with Codex-made frames, natural Microsoft narration, optional cleared sound, and your approval at publish.</p>
           <div class="actions">
             <a class="button primary" href={release} data-download>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 20h14"></path></svg>
@@ -79,7 +87,7 @@ const checks = [
               Read setup guide
             </a>
           </div>
-          <p class="release-note" data-release-note>Windows x64 · signed manifest · free local voice runtime</p>
+          <p class="release-note" data-release-note>SignalCut 0.1.1 · Windows x64 · signed release · no local AI</p>
         </div>
         <div class="studio-frame">
           <div class="window-bar"><span></span><span></span><span></span><small>SignalCut Studio</small></div>
@@ -103,10 +111,26 @@ const checks = [
         </ol>
       </section>
 
+      <section class="production-band section-rule" id="media">
+        <div class="section-heading media-heading">
+          <h2>Images that move.<br />A voice that lands.</h2>
+          <p>SignalCut builds motion from original still frames—camera moves, typography, pacing, transitions, narration, and sound—without requiring synthetic live-action video.</p>
+        </div>
+        <div class="production-list">
+          {production.map((item) => (
+            <article>
+              <span>{item.label}</span>
+              <h3>{item.title}</h3>
+              <p>{item.copy}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section class="security section-rule" id="security">
         <div class="security-copy">
           <h2>Your channel<br />stays <em>yours.</em></h2>
-          <p>SignalCut is local-first by design. Your content, credentials, and working data stay on your machine unless you decide to publish.</p>
+          <p>Your credentials, projects, source ledger, and renders stay in your local studio. SignalCut sends only the requests needed to services you connect and keeps final publishing under your control.</p>
           <ul>
             {checks.map((check) => <li><span aria-hidden="true">✓</span>{check}</li>)}
           </ul>
@@ -116,15 +140,15 @@ const checks = [
             <svg class="brand-mark large" viewBox="0 0 48 48" aria-hidden="true"><rect x="4" y="8" width="40" height="32" rx="4"></rect><path d="M10 14v5m0 5v5m0 5v1M38 14v5m0 5v5m0 5v1M18 15l14 9-14 9z"></path><path class="signal" d="M1 24h10l3-7 5 15 5-22 5 28 4-14h14"></path></svg>
             <strong>Local studio</strong><small>127.0.0.1</small>
           </div>
-          <div class="secure-rail"><span>Signed releases</span><span>Local database</span><span>Owner approval</span></div>
-          <div class="services"><span>Codex</span><span>Google</span><span>YouTube</span></div>
+          <div class="secure-rail"><span>Signed releases</span><span>Local credentials</span><span>Owner approval</span></div>
+          <div class="services"><span>Codex</span><span>Microsoft voice</span><span>Free media APIs</span><span>YouTube</span></div>
         </div>
       </section>
 
       <section class="closing section-rule" id="setup">
         <div class="closing-copy">
           <h2>Built for operators,<br />not spectators.</h2>
-          <p>SignalCut gives you the full production loop—from research to publish—inside a local studio you control.</p>
+          <p>Original frames. Natural narration. Optional sound. The complete production loop stays inside a studio you start, stop, and control.</p>
           <div class="actions">
             <a class="button primary" href={release} data-download><span>Download SignalCut</span></a>
             <a class="button secondary" href={`${repo}/stargazers`} target="_blank" rel="noreferrer">Star the repo</a>
@@ -158,7 +182,7 @@ const checks = [
           const target = preferred?.browser_download_url || data.html_url || releaseUrl;
           document.querySelectorAll("[data-download]").forEach((link) => link.href = target);
           const note = document.querySelector("[data-release-note]");
-          if (note) note.textContent = `${data.name || data.tag_name} · signed manifest · Windows x64`;
+          if (note) note.textContent = `${data.name || data.tag_name} · Windows x64 · signed release · no local AI`;
         })
         .catch(() => {
           document.querySelectorAll("[data-download]").forEach((link) => link.href = releaseUrl);

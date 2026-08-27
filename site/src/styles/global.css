@@ -69,6 +69,18 @@ h1 em::after { content: ""; position: absolute; left: 0; right: 0; bottom: 5px; 
 .workflow h3 { margin-top: 20px; font-size: 34px; font-weight: 600; text-transform: uppercase; letter-spacing: .01em; }
 .workflow li p { color: var(--muted); font-size: 14px; line-height: 1.65; }
 
+.production-band { padding: 96px 0 102px; }
+.media-heading { align-items: start; }
+.media-heading h2 { max-width: 760px; }
+.media-heading p { max-width: 500px; padding-top: 7px; }
+.production-list { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.production-list article { min-width: 0; padding: 38px 42px 42px; border-left: 1px solid var(--line); }
+.production-list article:first-child { padding-left: 0; border-left: 0; }
+.production-list article:last-child { padding-right: 0; }
+.production-list span { color: var(--red); font: 600 13px/1 var(--display); letter-spacing: .1em; text-transform: uppercase; }
+.production-list h3 { max-width: 330px; margin-top: 18px; font-size: 34px; font-weight: 600; text-transform: uppercase; letter-spacing: .005em; }
+.production-list p { max-width: 380px; margin: 20px 0 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
+
 .security { min-height: 650px; display: grid; grid-template-columns: .85fr 1.15fr; gap: 100px; align-items: center; padding: 96px 0; }
 .security-copy > p { max-width: 570px; margin: 26px 0 28px; color: var(--muted); }
 .security ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
@@ -105,6 +117,9 @@ footer div { display: flex; gap: 28px; }
   .studio-frame { transform: none; }
   .workflow-list { grid-template-columns: repeat(2, 1fr); gap: 45px 0; }
   .workflow-list li:nth-child(odd) { padding-left: 0; border-left: 0; }
+  .production-list { grid-template-columns: 1fr; }
+  .production-list article, .production-list article:first-child, .production-list article:last-child { padding: 34px 0; border-left: 0; border-top: 1px solid var(--line); }
+  .production-list article:first-child { border-top: 0; }
   .security { grid-template-columns: 1fr; gap: 55px; }
   .closing { grid-template-columns: 1fr; gap: 54px; }
 }
@@ -120,7 +135,7 @@ footer div { display: flex; gap: 28px; }
   .hero-copy > p { font-size: 16px; }
   .actions { display: grid; grid-template-columns: 1fr; }
   .button { width: 100%; }
-  .workflow, .security, .closing { padding: 68px 0; }
+  .workflow, .production-band, .security, .closing { padding: 68px 0; }
   .section-heading { display: block; margin-bottom: 48px; }
   .section-heading p { margin-top: 20px; text-align: left; }
   .workflow-list { grid-template-columns: 1fr; gap: 40px; }
