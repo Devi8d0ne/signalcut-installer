@@ -18,12 +18,12 @@
 
 This is the public installation and update-verification repository for SignalCut. It intentionally contains **no SignalCut application source code, credentials, signing secrets, or private-repository access**.
 
-> **Release status:** SignalCut 0.1.1 for Windows x64 is available as a portable release. Its manifest, byte length, and SHA-256 digest are signed with the production SignalCut Ed25519 release key.
+> **Release status:** SignalCut 0.1.2 for Windows x64 is available as a portable release. Its manifest, byte length, and SHA-256 digest are signed with the production SignalCut Ed25519 release key.
 
 ## Install SignalCut
 
 1. Open the repository's [Releases](https://github.com/Devi8d0ne/signalcut-installer/releases) page.
-2. Download `signalcut-0.1.1-windows-x64.zip`.
+2. Download `signalcut-0.1.2-windows-x64.zip`.
 3. Verify it with the signed `release.json` and `release.json.sig`, or use the reviewed [Codex installation prompt](CODEX_INSTALL_PROMPT.md).
 4. Extract the complete folder and double-click `Start SignalCut.vbs` for a hidden, on-demand launch.
 5. Connect your own Codex, Google, YouTube, and optional free Pexels credentials in SignalCut. Use `Stop SignalCut.vbs` to stop every SignalCut service.

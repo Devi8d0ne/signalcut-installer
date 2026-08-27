@@ -1,6 +1,6 @@
 {
   "product": "SignalCut",
-  "installerVersion": "0.1.1",
+  "installerVersion": "0.1.2",
   "manifestUrl": "https://github.com/Devi8d0ne/signalcut-installer/releases/latest/download/release.json",
   "signatureUrl": "https://github.com/Devi8d0ne/signalcut-installer/releases/latest/download/release.json.sig",
   "publicKeyPath": "keys/signalcut-release-public.pem",
