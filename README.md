@@ -18,7 +18,7 @@
 
 This is the public installation and update-verification repository for SignalCut. It intentionally contains **no SignalCut application source code, credentials, signing secrets, or private-repository access**.
 
-> **Release status:** SignalCut 0.2.0 introduces Express production, granular editorial revision, evidence-linked recovery artifacts, and visible completion targets. The latest downloadable Windows x64 release remains resolved dynamically from GitHub Releases and is verified by the signed manifest.
+> **Release status:** SignalCut 0.2.1 restores ElevenLabs as the optional premium narration engine while retaining Microsoft neural narration as the no-key fallback. It includes the 0.2.0 Express production, granular revision, recovery artifacts, and visible completion targets.
 
 ## Install SignalCut
 
@@ -30,7 +30,7 @@ This is the public installation and update-verification repository for SignalCut
 
 Or clone this installer repository, open it in Codex Desktop, and use the reviewed [Codex installation prompt](CODEX_INSTALL_PROMPT.md). Codex follows the same signed-manifest and checksum verification path; it never receives SignalCut's private source or your service credentials.
 
-The SignalCut package bundles its application runtime, restricted FFmpeg/FFprobe final-assembly tools, browser runtime, local database runtime and migrations, and updater. It does not bundle or download local AI models or a Python AI environment. End users do not install Node.js, npm, Git, Wrangler, Python, or media tooling. Original images use Codex-connected tools, source images use free cloud APIs, and narration uses Microsoft Edge's online neural voices without an account or key.
+The SignalCut package bundles its application runtime, restricted FFmpeg/FFprobe final-assembly tools, browser runtime, local database runtime and migrations, and updater. It does not bundle or download local AI models or a Python AI environment. End users do not install Node.js, npm, Git, Wrangler, Python, or media tooling. Original images use Codex-connected tools, source images use free cloud APIs, and narration uses an owner-connected ElevenLabs account when enabled or Microsoft Edge online neural voices as the no-key fallback.
 
 SignalCut never registers itself to start with Windows. It launches only when the operator starts it, uses the Eco resource profile, and keeps the production engine paused until the operator explicitly starts production.
 
@@ -66,7 +66,7 @@ SignalCut's working database, channel authorization, source ledger, scripts, nar
 - Run owner-defined content lanes mapped to real YouTube playlists, categories, formats, and schedules.
 - Research current sources, record citations and rights, and avoid generic filler footage.
 - Produce scripts, chapters, captions, metadata, focused hashtags, thumbnails, narration, and production manifests.
-- Build image-driven motion videos from Codex-generated frames and rights-cleared free image references, with Microsoft online neural voiceover and optional rights-cleared ambience.
+- Build image-driven motion videos from Codex-generated frames and rights-cleared free image references, with ElevenLabs premium voiceover or Microsoft online narration plus optional rights-cleared ambience.
 - Support selective reproduction across research, claims, hook, script, metadata, voiceover, music, mix, frames, scenes, cover, captions, and timing.
 - Write change summaries, claim maps, and recovery checkpoints so valid work survives retries and interrupted sessions.
 - Keep autonomous safe stages behind the selected approval policy and final YouTube publishing under owner control.

@@ -22,7 +22,7 @@ const workflow = [
 
 const production = [
   { label: "Frames", title: "Original image-first scenes", copy: "Codex image tools create a focused storyboard of on-subject frames. SignalCut turns them into deliberate push, pull, and pan movement without wasting generation calls on near-duplicates." },
-  { label: "Voice", title: "Microsoft neural narration", copy: "Natural online voices are included in the workflow with no ElevenLabs account, no required voice API key, and no local speech model." },
+  { label: "Voice", title: "ElevenLabs premium narration", copy: "Connect your own ElevenLabs account and male/female voices, or keep Microsoft neural narration as the no-key fallback. No local speech model." },
   { label: "Sound", title: "Music only when it helps", copy: "Use optional rights-cleared music or subtle ambience under the narration. Silent space remains a deliberate creative option." },
 ];
 
@@ -41,10 +41,10 @@ const checks = [
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="SignalCut turns a brief into an original image-driven YouTube video with Codex-generated frames, Microsoft neural narration, optional cleared music, and owner-controlled publishing." />
+    <meta name="description" content="SignalCut turns a brief into an original image-driven YouTube video with Codex-generated frames, ElevenLabs or Microsoft narration, optional cleared music, and owner-controlled publishing." />
     <meta name="theme-color" content="#08090a" />
     <meta property="og:title" content="SignalCut — From brief to broadcast" />
-    <meta property="og:description" content="Original image-driven videos, natural Microsoft narration, optional cleared sound, and owner-controlled YouTube publishing." />
+    <meta property="og:description" content="Original image-driven videos, premium ElevenLabs or Microsoft narration, optional cleared sound, and owner-controlled YouTube publishing." />
     <meta property="og:image" content={`${assetBase}images/signalcut-social-preview-1280x640.jpg`} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://devi8d0ne.github.io/signalcut-installer/" />
@@ -88,7 +88,7 @@ const checks = [
               Read setup guide
             </a>
           </div>
-          <p class="release-note" data-release-note>SignalCut 0.2.0 · Express production · Windows x64 · no local AI</p>
+          <p class="release-note" data-release-note>SignalCut 0.2.1 · ElevenLabs + Express production · Windows x64 · no local AI</p>
         </div>
         <div class="studio-frame">
           <div class="window-bar"><span></span><span></span><span></span><small>SignalCut Studio</small></div>
@@ -142,7 +142,7 @@ const checks = [
             <strong>Local studio</strong><small>127.0.0.1</small>
           </div>
           <div class="secure-rail"><span>Signed releases</span><span>Local credentials</span><span>Owner approval</span></div>
-          <div class="services"><span>Codex</span><span>Microsoft voice</span><span>Free media APIs</span><span>YouTube</span></div>
+          <div class="services"><span>Codex</span><span>ElevenLabs + Microsoft voice</span><span>Free media APIs</span><span>YouTube</span></div>
         </div>
       </section>
 
