@@ -18,7 +18,7 @@
 
 This is the public installation and update-verification repository for SignalCut. It intentionally contains **no SignalCut application source code, credentials, signing secrets, or private-repository access**.
 
-> **Release status:** SignalCut 0.2.3 adds a clearer guided ElevenLabs connection experience and actionable local-service errors on top of the 0.2.2 live usage and per-video voice controls.
+> **Release status:** SignalCut 0.2.4 adds verified Design receipts, generated thumbnail and cover enforcement, resumable pipeline turns, queue prioritization, and an auto-filled Publish review package.
 
 ## Install SignalCut
 
@@ -69,6 +69,8 @@ SignalCut's working database, channel authorization, source ledger, scripts, nar
 - Build image-driven motion videos from Codex-generated frames and rights-cleared free image references, with ElevenLabs premium voiceover or Microsoft online narration plus optional rights-cleared ambience.
 - Support selective reproduction across research, claims, hook, script, metadata, voiceover, music, mix, frames, scenes, cover, captions, and timing.
 - Write change summaries, claim maps, and recovery checkpoints so valid work survives retries and interrupted sessions.
+- Require machine-verified Design receipts with distinct generated thumbnail and opening-cover assets before production advances.
+- Reorder approved pipeline work, recover transient Codex stream failures, and open Publish review with generated metadata and media already filled in.
 - Keep autonomous safe stages behind the selected approval policy and final YouTube publishing under owner control.
 - Track exact Codex usage plus the connected ElevenLabs plan balance, remaining credits, reset time, overage, and voice slots.
 

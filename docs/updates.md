@@ -32,6 +32,8 @@ SignalCut 0.2.0 adds **Express production mode**. Research, angle development, s
 
 SignalCut 0.2.3 improves the **ElevenLabs connection experience** with a guided provider card, clearer saved-key and voice-ID guidance, visible connection state, direct voice-library access, mobile layout improvements, and actionable local-service errors.
 
+SignalCut 0.2.4 hardens the **Design-to-Publish handoff**. Design must return a machine-verified receipt backed by a valid production manifest, a generated thumbnail, a distinct opening cover, and ledgered assets. Pipeline work can be reprioritized and transient Codex stream failures resume without discarding completed artifacts. Publish review now discovers the generated video, metadata, hashtags, thumbnail, playlist, and visibility automatically before owner approval.
+
 SignalCut 0.2.2 adds an **ElevenLabs usage system** driven by the provider's official subscription API. A second top rail shows remaining credits beneath Codex, the Usage workspace shows plan/reset/overage/voice-slot details, and each video independently selects its provider, voice direction, and v2/v3 model. The API key remains local and never appears in project artifacts, logs, or browser responses.
 
 SignalCut 0.2.1 restored **ElevenLabs premium narration** as a first-class optional provider while retaining Microsoft online neural narration as the no-key fallback.
