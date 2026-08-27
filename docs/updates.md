@@ -30,6 +30,8 @@ SignalCut 0.1.3 makes **Stop engine** a real cancellation boundary for active Co
 
 SignalCut 0.2.0 adds **Express production mode**. Research, angle development, script, claim mapping, and metadata are completed in one durable editorial pass; safe work advances without an idle review countdown; independent cloud narration and asset work are instructed to overlap; and local FFmpeg remains limited to one bounded heavy job. It adds visible completion targets, interest-aware topic opportunity scoring, recovery checkpoints, per-turn change summaries, and granular selective revision across thirteen editorial and production surfaces. Final YouTube publishing remains owner-controlled and verified after upload.
 
+SignalCut 0.2.3 improves the **ElevenLabs connection experience** with a guided provider card, clearer saved-key and voice-ID guidance, visible connection state, direct voice-library access, mobile layout improvements, and actionable local-service errors.
+
 SignalCut 0.2.2 adds an **ElevenLabs usage system** driven by the provider's official subscription API. A second top rail shows remaining credits beneath Codex, the Usage workspace shows plan/reset/overage/voice-slot details, and each video independently selects its provider, voice direction, and v2/v3 model. The API key remains local and never appears in project artifacts, logs, or browser responses.
 
 SignalCut 0.2.1 restored **ElevenLabs premium narration** as a first-class optional provider while retaining Microsoft online neural narration as the no-key fallback.

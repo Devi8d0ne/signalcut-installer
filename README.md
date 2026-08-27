@@ -18,7 +18,7 @@
 
 This is the public installation and update-verification repository for SignalCut. It intentionally contains **no SignalCut application source code, credentials, signing secrets, or private-repository access**.
 
-> **Release status:** SignalCut 0.2.2 adds live ElevenLabs credit visibility and per-video provider, voice, and model controls while retaining Microsoft neural narration as the no-key fallback.
+> **Release status:** SignalCut 0.2.3 adds a clearer guided ElevenLabs connection experience and actionable local-service errors on top of the 0.2.2 live usage and per-video voice controls.
 
 ## Install SignalCut
 
