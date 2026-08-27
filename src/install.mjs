@@ -195,9 +195,12 @@ async function launchInstaller(artifactPath, environment, version) {
     const installRoot = path.join(process.env.LOCALAPPDATA || homedir(), "SignalCut", "Application", version);
     await mkdir(installRoot, { recursive: true });
     run("tar.exe", ["-x", "-f", artifactPath, "-C", installRoot]);
-    const launcher = await findFile(installRoot, "Start SignalCut.cmd");
-    if (!launcher) fail("The verified SignalCut archive does not contain Start SignalCut.cmd");
-    run("cmd.exe", ["/d", "/c", "start", "", launcher]);
+    const silentLauncher = await findFile(installRoot, "Start SignalCut.vbs");
+    const commandLauncher = silentLauncher ? null : await findFile(installRoot, "Start SignalCut.cmd");
+    const launcher = silentLauncher ?? commandLauncher;
+    if (!launcher) fail("The verified SignalCut archive does not contain a supported Start SignalCut launcher");
+    if (silentLauncher) run("wscript.exe", [silentLauncher]);
+    else run("cmd.exe", ["/d", "/c", "start", "", launcher]);
     return;
   }
   if (environment.platform === "windows" && lower.endsWith(".msi")) {

@@ -7,9 +7,9 @@
 - An authenticated Codex account.
 - Internet access for Codex and user-connected services.
 
-SignalCut bundles its runtime, FFmpeg/FFprobe, browser automation, local database, migrations, Python/Qwen3-TTS production voice runtime, Kokoro preview model, and updater. Node.js, npm, Git, Wrangler, Python, and system media tools are not end-user prerequisites.
+SignalCut bundles its runtime, restricted FFmpeg/FFprobe final-assembly tools, browser runtime, local database, migrations, and updater. Node.js, npm, Git, Wrangler, Python, and system media tools are not end-user prerequisites. SignalCut does not bundle or download local AI models or Python AI environments.
 
-The Windows x64 portable release is a ZIP. Extract the complete directory and run `Start SignalCut.cmd`. First launch automatically downloads the pinned open-source Qwen3-TTS model weights (about 4 GB) into the local SignalCut data directory. This requires internet access but no provider account, credits, subscription, or API key.
+The Windows x64 portable release is a ZIP. Extract the complete directory and run `Start SignalCut.vbs`. It starts hidden, only when requested, in Eco mode, with production paused. Run `Stop SignalCut.vbs` to stop every SignalCut service. SignalCut does not register a Windows startup entry.
 
 ## Credentials
 
@@ -18,7 +18,8 @@ The installer does not collect application credentials. After verified installat
 1. Their own local Codex login.
 2. Their own Google Cloud project and YouTube Data API v3 OAuth Desktop client.
 3. Their own YouTube channel authorization.
-4. Any optional user-owned services supported by that SignalCut version.
+4. Their own ElevenLabs account for cloud narration.
+5. Any optional user-owned services supported by that SignalCut version.
 
 Enter credentials only into SignalCut's local interface. Do not paste them into Codex, commit them to this repository, place them in an issue, or send them to a SignalCut download host.
 

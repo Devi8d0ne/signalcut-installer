@@ -18,23 +18,25 @@
 
 This is the public installation and update-verification repository for SignalCut. It intentionally contains **no SignalCut application source code, credentials, signing secrets, or private-repository access**.
 
-> **Release status:** SignalCut 0.1.0 for Windows x64 is available as a portable release. Its manifest, byte length, and SHA-256 digest are signed with the production SignalCut Ed25519 release key.
+> **Release status:** SignalCut 0.1.1 for Windows x64 is available as a portable release. Its manifest, byte length, and SHA-256 digest are signed with the production SignalCut Ed25519 release key.
 
 ## Install SignalCut
 
 1. Open the repository's [Releases](https://github.com/Devi8d0ne/signalcut-installer/releases) page.
-2. Download `signalcut-0.1.0-windows-x64.zip`.
+2. Download `signalcut-0.1.1-windows-x64.zip`.
 3. Verify it with the signed `release.json` and `release.json.sig`, or use the reviewed [Codex installation prompt](CODEX_INSTALL_PROMPT.md).
-4. Extract the complete folder and double-click `Start SignalCut.cmd`.
-5. Keep the first-launch window open while SignalCut downloads its pinned open-source Qwen3-TTS model, then connect your own Codex, Google, and YouTube credentials.
+4. Extract the complete folder and double-click `Start SignalCut.vbs` for a hidden, on-demand launch.
+5. Connect your own Codex, Google, YouTube, and ElevenLabs credentials in SignalCut. Use `Stop SignalCut.vbs` to stop every SignalCut service.
 
 Or clone this installer repository, open it in Codex Desktop, and use the reviewed [Codex installation prompt](CODEX_INSTALL_PROMPT.md). Codex follows the same signed-manifest and checksum verification path; it never receives SignalCut's private source or your service credentials.
 
-The SignalCut package bundles its application runtime, FFmpeg/FFprobe, browser automation, local database runtime and migrations, Python/Qwen3-TTS production voice runtime, Kokoro preview model, and updater. End users do not install Node.js, npm, Git, Wrangler, Python, or media tooling. On first launch, SignalCut automatically downloads the pinned free Qwen3-TTS model weights (about 4 GB); no voice provider account or API key is required.
+The SignalCut package bundles its application runtime, restricted FFmpeg/FFprobe final-assembly tools, browser runtime, local database runtime and migrations, and updater. It does not bundle or download local AI models or a Python AI environment. End users do not install Node.js, npm, Git, Wrangler, Python, or media tooling; narration uses the owner's connected ElevenLabs account.
+
+SignalCut never registers itself to start with Windows. It launches only when the operator starts it, uses the Eco resource profile, and keeps the production engine paused until the operator explicitly starts production.
 
 The portable ZIP is protected by the signed SignalCut release manifest and checksum. It is not yet an Authenticode-signed `.exe`; Windows may show the normal warning for a downloaded command file.
 
-Codex Desktop itself is not bundled. A supported Codex installation and authenticated Codex account are required to use SignalCut. User-owned Google, YouTube, and other service credentials are connected locally after first launch.
+Codex Desktop itself is not bundled. A supported Codex installation and authenticated Codex account are required to use SignalCut. User-owned Google, YouTube, ElevenLabs, and other service credentials are connected locally after first launch.
 
 ## Optional Codex guidance
 
@@ -52,7 +54,7 @@ The Node.js code in `src/` is a public reference implementation and security tes
 
 ## What remains local
 
-After SignalCut starts, connect your Codex session, Google OAuth client, YouTube authorization, and any other supported user-owned services inside SignalCut's local interface. Do not put those credentials in this repository or a Codex conversation.
+After SignalCut starts, connect your Codex session, Google OAuth client, YouTube authorization, ElevenLabs account, and any other supported user-owned services inside SignalCut's local interface. Do not put those credentials in this repository or a Codex conversation.
 
 SignalCut's working database, channel authorization, source ledger, scripts, narration, frames, thumbnails, renders, and usage ledger remain on the operator's machine. Local services bind to loopback addresses rather than becoming a hosted multi-user service.
 
