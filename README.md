@@ -18,7 +18,7 @@
 
 This is the public installation and update-verification repository for SignalCut. It intentionally contains **no SignalCut application source code, credentials, signing secrets, or private-repository access**.
 
-> **Release status:** SignalCut 0.2.5 adds free-provider and custom HTTPS connectors, automatic research-source indexing, 20% Codex/ElevenLabs reserve controls, safer project routing, and resilient Publish package loading.
+> **Release status:** SignalCut 0.2.6 adds duplicate-safe YouTube publishing and recovery, Shorts classification, connection-aware pipeline backoff, live Codex activity, streamed Director responses, and optional milestone voice notices.
 
 ## Install SignalCut
 
@@ -71,6 +71,8 @@ SignalCut's working database, channel authorization, source ledger, scripts, nar
 - Write change summaries, claim maps, and recovery checkpoints so valid work survives retries and interrupted sessions.
 - Require machine-verified Design receipts with distinct generated thumbnail and opening-cover assets before production advances.
 - Reorder approved pipeline work, recover transient Codex stream failures, and open Publish review with generated metadata and media already filled in.
+- Prevent duplicate YouTube uploads, reconcile uncertain network outcomes, repair thumbnails and playlists, and identify Shorts in the local library.
+- Back off failing provider connections without blocking earlier queued work, while showing live Codex turn activity and preserving checkpoints.
 - Connect validated free research/media providers or an owner-defined HTTPS JSON endpoint without exposing credentials or allowing local-network targets.
 - Preserve a configurable safety reserve by stopping new Codex and ElevenLabs work at 20% remaining unless the owner explicitly continues that provider.
 - Keep autonomous safe stages behind the selected approval policy and final YouTube publishing under owner control.
