@@ -37,6 +37,8 @@ An update-check failure leaves the installed version untouched. A release may no
 
 ## Release history
 
+SignalCut 0.2.8 fixes the **empty Projects workspace**. Fresh installations and workspaces with no projects show a clear landing view with a **New project** action. The interface also recovers when a previously selected project has been deleted instead of leaving the Projects screen blank. This is a focused Windows x64 maintenance release; the normal manual update process applies.
+
 SignalCut 0.2.7 is a **maintenance release**. It adds the packaged signed update checker and corrects the update instructions, respects the more constrained active Codex usage window, avoids stale usage limits, improves recovery of interrupted work, and refreshes runtime dependencies. Windows x64 remains the published platform.
 
 SignalCut 0.1.1 removes local AI runtimes and automatic model downloads. Original images use Codex-connected tools, source images use free cloud APIs, narration uses Microsoft Edge online neural voices, and the local package retains only bounded final assembly and application infrastructure.

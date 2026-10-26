@@ -18,7 +18,7 @@
 
 This is the public installation and update-verification repository for SignalCut. It intentionally contains **no SignalCut application source code, credentials, signing secrets, or private-repository access**.
 
-> **Release status:** SignalCut 0.2.7 is a Windows x64 maintenance release with a signed update-check shortcut, corrected account usage reserves, safer recovery, and refreshed runtime dependencies. The application source remains private.
+> **Release status:** SignalCut 0.2.8 fixes the Projects screen for a fresh installation or an empty workspace. It shows a clear starting point with **New project** and recovers when the previously selected project has been removed. Windows x64 remains the published platform, and application source remains private.
 
 ## Install SignalCut
 
