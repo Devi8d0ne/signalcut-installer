@@ -233,9 +233,12 @@ async function launchInstaller(artifactPath, environment, version) {
 }
 
 function parseArgs(argv) {
-  const allowed = new Set(["--check", "--download-only"]);
+  const allowed = new Set(["--check", "--download-only", "--check-update"]);
   for (const argument of argv) if (!allowed.has(argument)) fail(`Unknown argument: ${argument}`);
-  return { checkOnly: argv.includes("--check"), downloadOnly: argv.includes("--download-only") };
+  if (argv.includes("--check-update") && (argv.includes("--check") || argv.includes("--download-only"))) {
+    fail("--check-update cannot be combined with --check or --download-only");
+  }
+  return { checkOnly: argv.includes("--check"), downloadOnly: argv.includes("--download-only"), checkUpdate: argv.includes("--check-update") };
 }
 
 async function loadConfiguration() {
@@ -273,6 +276,21 @@ async function main() {
     fail(`Installer ${config.installerVersion} is older than required ${manifest.minimumInstallerVersion}`);
   }
   const artifact = selectArtifact(manifest, environment);
+  const installedVersion = config.installedVersion ?? config.installerVersion;
+  const versionDifference = compareVersions(manifest.version, installedVersion);
+  if (args.checkUpdate) {
+    if (versionDifference > 0) {
+      process.stdout.write(`Update available: SignalCut ${manifest.version} (installed ${installedVersion}).\nVerified download: ${artifact.url}\nStop SignalCut, then download and extract the newer release into a separate folder. Your local projects and credentials stay in place.\n`);
+    } else if (versionDifference === 0) {
+      process.stdout.write(`SignalCut ${installedVersion} is up to date.\n`);
+    } else {
+      process.stdout.write(`Installed SignalCut ${installedVersion} is newer than the latest published release ${manifest.version}; no downgrade is needed.\n`);
+    }
+    return;
+  }
+  if (config.installedVersion && versionDifference < 0) {
+    fail(`Refusing to downgrade SignalCut ${installedVersion} to ${manifest.version}`);
+  }
   const downloadDirectory = await mkdtemp(path.join(tmpdir(), "signalcut-"));
   const artifactPath = path.join(downloadDirectory, artifact.filename);
   await downloadAndVerify(artifact, artifactPath);

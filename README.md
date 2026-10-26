@@ -18,7 +18,7 @@
 
 This is the public installation and update-verification repository for SignalCut. It intentionally contains **no SignalCut application source code, credentials, signing secrets, or private-repository access**.
 
-> **Release status:** SignalCut 0.2.6 adds duplicate-safe YouTube publishing and recovery, Shorts classification, connection-aware pipeline backoff, live Codex activity, streamed Director responses, and optional milestone voice notices.
+> **Release status:** SignalCut 0.2.7 is a Windows x64 maintenance release with a signed update-check shortcut, corrected account usage reserves, safer recovery, and refreshed runtime dependencies. The application source remains private.
 
 ## Install SignalCut
 
@@ -30,7 +30,7 @@ This is the public installation and update-verification repository for SignalCut
 
 Or clone this installer repository, open it in Codex Desktop, and use the reviewed [Codex installation prompt](CODEX_INSTALL_PROMPT.md). Codex follows the same signed-manifest and checksum verification path; it never receives SignalCut's private source or your service credentials.
 
-The SignalCut package bundles its application runtime, restricted FFmpeg/FFprobe final-assembly tools, browser runtime, local database runtime and migrations, and updater. It does not bundle or download local AI models or a Python AI environment. End users do not install Node.js, npm, Git, Wrangler, Python, or media tooling. Original images use Codex-connected tools, source images use free cloud APIs, and narration uses an owner-connected ElevenLabs account when enabled or Microsoft Edge online neural voices as the no-key fallback.
+The current package supports **Windows x64**; macOS, Linux, and Windows ARM64 packages are not currently published. It bundles its application runtime, restricted FFmpeg/FFprobe final-assembly tools, browser runtime, local database runtime and migrations, and signed update checker. It does not bundle or download local AI models or a Python AI environment. End users do not install Node.js, npm, Git, Wrangler, Python, or media tooling. Original images use Codex-connected tools, source images use free cloud APIs, and narration uses an owner-connected ElevenLabs account when enabled or Microsoft Edge online neural voices as the no-key fallback.
 
 SignalCut never registers itself to start with Windows. It launches only when the operator starts it, uses the Eco resource profile, and keeps the production engine paused until the operator explicitly starts production.
 
@@ -44,7 +44,9 @@ Codex can guide a user through choosing and validating an official release using
 
 ## Updates
 
-Every approved private R&D version produces a new immutable, signed GitHub Release here. SignalCut checks the signed release manifest and offers the compatible update. Application source never enters this repository.
+Every approved private R&D version produces a new immutable, signed GitHub Release here. In version 0.2.7 and later, run `Check for updates.cmd` from the extracted package to verify the latest signed release metadata and see whether a newer compatible version is available. This check does not download or install an update.
+
+To update, stop SignalCut, download and verify the newer ZIP, and extract it into a separate folder. Start the new version from that folder. Projects and connected credentials remain under `%LOCALAPPDATA%\SignalCut`; keep that data directory. Older versions can use the same manual download process. Application source never enters this repository.
 
 See [updates and release channels](docs/updates.md) for the exact behavior.
 

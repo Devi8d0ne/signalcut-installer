@@ -2,16 +2,22 @@
 
 ## Prerequisites
 
-- A supported 64-bit Windows, macOS, or Linux machine.
+- A Windows x64 machine. Current releases do not include macOS, Linux, or Windows ARM64 packages.
 - The Codex desktop app or another supported local Codex authentication environment.
 - An authenticated Codex account.
 - Internet access for Codex and user-connected services.
 
-SignalCut bundles its runtime, restricted FFmpeg/FFprobe final-assembly tools, browser runtime, local database, migrations, and updater. Node.js, npm, Git, Wrangler, Python, and system media tools are not end-user prerequisites. SignalCut does not bundle or download local AI models or Python AI environments.
+SignalCut bundles its runtime, restricted FFmpeg/FFprobe final-assembly tools, browser runtime, local database, migrations, and signed update checker. Node.js, npm, Git, Wrangler, Python, and system media tools are not end-user prerequisites. SignalCut does not bundle or download local AI models or Python AI environments.
 
 The Windows x64 portable release is a ZIP. Extract the complete directory and run `Start SignalCut.vbs`. It starts the bridge, API, and web service hidden, waits for all three health checks, and only then opens Studio in its dedicated app window—not a normal browser tab—with Eco mode enabled and production paused. Run `Stop SignalCut.vbs` to stop every SignalCut service. SignalCut does not register a Windows startup entry.
 
 Inside Studio, **Stop engine** preserves projects and approvals while cancelling active production work and the queued heavy-work backlog. The separate `Stop SignalCut.vbs` shortcut shuts down the complete local application stack.
+
+## Updating
+
+Version 0.2.7 and later includes `Check for updates.cmd`. Run it from the extracted package to check signed release metadata using the bundled runtime. It reports whether an update is available and does not download or install anything.
+
+For an update, run `Stop SignalCut.vbs`, download and verify the newer release from GitHub, and extract the complete ZIP into a separate folder. Launch the new copy with `Start SignalCut.vbs`. Keep `%LOCALAPPDATA%\SignalCut`, where projects and connected credentials are stored. Versions before 0.2.7 can also update using this manual process.
 
 ## Credentials
 

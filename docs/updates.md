@@ -18,9 +18,26 @@ The update manifest URL remains stable:
 https://github.com/Devi8d0ne/signalcut-installer/releases/latest/download/release.json
 ```
 
-SignalCut trusts the manifest only when its detached Ed25519 signature verifies with the public key pinned in this repository. It then selects exactly one matching operating-system/architecture installer and verifies its signed byte length and SHA-256 digest.
+SignalCut trusts the manifest only when its detached Ed25519 signature verifies with the public key pinned in this repository. It then selects exactly one matching operating-system/architecture installer. Downloads made through the verifier must also match the signed byte length and SHA-256 digest. The currently published platform is **Windows x64**; the manifest format also supports other platforms for future releases.
 
-An update failure leaves the installed version untouched. A release may not silently downgrade the application or replace user projects and credentials. Database migrations must be versioned and backed up before application of a non-reversible change.
+## Check and install an update
+
+Version 0.2.7 and later includes `Check for updates.cmd` in the extracted package. It checks the signed manifest, minimum checker version, and platform match before reporting a newer release or an up-to-date installation. The check retrieves metadata only; it never downloads, launches, or installs a package. There is no automatic update installation or update prompt inside Studio.
+
+To install an update:
+
+1. Run `Stop SignalCut.vbs` from the current installation.
+2. Download the newer Windows x64 ZIP from the official GitHub Release and verify it using its signed manifest and checksum, or use the reviewed Codex installation prompt.
+3. Extract the complete ZIP into a separate folder rather than overwriting the old installation.
+4. Run `Start SignalCut.vbs` from the new folder. Keep `%LOCALAPPDATA%\SignalCut`, which contains existing projects and connected credentials.
+
+Users of earlier releases follow the same manual installation steps. A bundled checker configured with an installed version refuses an older release when invoked to install. An update check simply reports when the installed version is already newer.
+
+An update-check failure leaves the installed version untouched. A release may not silently downgrade the application or replace user projects and credentials. Database migrations must be versioned and backed up before application of a non-reversible change.
+
+## Release history
+
+SignalCut 0.2.7 is a **maintenance release**. It adds the packaged signed update checker and corrects the update instructions, respects the more constrained active Codex usage window, avoids stale usage limits, improves recovery of interrupted work, and refreshes runtime dependencies. Windows x64 remains the published platform.
 
 SignalCut 0.1.1 removes local AI runtimes and automatic model downloads. Original images use Codex-connected tools, source images use free cloud APIs, narration uses Microsoft Edge online neural voices, and the local package retains only bounded final assembly and application infrastructure.
 

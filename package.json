@@ -1,6 +1,6 @@
 {
   "name": "signalcut-installer",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "private": true,
   "type": "module",
   "description": "Public, fail-closed installer and release verifier for SignalCut.",
@@ -12,11 +12,11 @@
     "test": "node --test"
   },
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=24.22.1"
   },
   "devDependencies": {
-    "@fontsource/barlow-condensed": "^5.2.6",
-    "@fontsource/inter": "^5.2.6",
-    "astro": "^7.2.8"
+    "@fontsource/barlow-condensed": "5.3.0",
+    "@fontsource/inter": "5.3.0",
+    "astro": "7.4.2"
   }
 }
